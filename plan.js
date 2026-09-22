@@ -1,0 +1,77 @@
+// 20-block self-study plan for GATE CSE 2027.
+// Each block is one week by default. If you change the exam date in Settings,
+// the blocks stretch or shrink to fit the time you have (never below 7 days).
+window.PLAN_DEFAULTS = { start: '2026-09-22', exam: '2027-02-06', weeklyHours: 27 };
+
+window.DAILY_ROUTINE = [
+  'Mon–Fri (≈3 h/day): 1.5 h learn the concept (NPTEL lecture or standard book) → 1 h solve GATE PYQs on that topic → 30 min: 5 GA questions + app practice',
+  'Saturday (≈6 h): finish the week\'s leftover topics, then PYQs for the whole week\'s topics',
+  'Sunday (≈6 h): 1 h weekly test (Mock Tests → Custom timed test on this week\'s subjects) → revise short notes → update error log → 30 min revise previous weeks (spaced revision)',
+  'Every day: write 1-page short notes (formulas and traps). You will revise from these in the final month, not from books.'
+];
+
+window.PLAN = [
+  { title: 'Discrete Maths I', subjects: ['DM'],
+    topics: ['Propositional logic, tautologies, equivalences', 'First-order logic, quantifiers, negation', 'Sets, relations (reflexive/symmetric/transitive, counting relations), functions', 'Partial orders, Hasse diagrams, lattices'],
+    tasks: ['Learn logic (propositional + FOL)', 'Learn sets, relations & functions', 'Learn POSETs & lattices', 'Solve GATE PYQs: Logic, Sets & Relations (last 10 years)', 'App practice: Discrete Maths (logic/relations topics)', 'Sunday weekly test + short notes'] },
+  { title: 'Discrete Maths II', subjects: ['DM'],
+    topics: ['Monoids, groups, subgroups, Lagrange\'s theorem', 'Graphs: connectivity, Euler/Hamilton, matching, colouring, planarity basics', 'Counting: permutations, combinations, pigeonhole, inclusion–exclusion', 'Recurrence relations, generating functions'],
+    tasks: ['Learn groups & monoids', 'Learn graph theory', 'Learn combinatorics & recurrences', 'Solve GATE PYQs: Groups, Graphs, Combinatorics', 'App practice: all Discrete Maths ≥ 70% accuracy', 'Sunday weekly test + revise Week 1'] },
+  { title: 'Digital Logic', subjects: ['DL'],
+    topics: ['Boolean algebra, K-maps, minimization, prime implicants', 'Combinational circuits: MUX, decoder, adders, comparators', 'Sequential circuits: latches, flip-flops (SR/JK/D/T), counters, registers', 'Number systems, 1\'s/2\'s complement, overflow, IEEE-754 floating point'],
+    tasks: ['Learn Boolean algebra & K-map', 'Learn combinational circuits', 'Learn sequential circuits & counters', 'Learn number representation & floating point', 'Solve GATE PYQs: Digital Logic', 'App practice: Digital Logic ≥ 70%', 'Sunday weekly test + revise DM'] },
+  { title: 'C Programming & Data Structures I', subjects: ['PDS'],
+    topics: ['C: pointers, arrays, strings, structures, storage classes, scope, parameter passing', 'Recursion: tracing, recurrence of calls', 'Arrays (address calculation), stacks (infix/postfix), queues (circular, deque)', 'Linked lists (singly, doubly, circular)'],
+    tasks: ['Learn C pointers, arrays & strings', 'Learn storage classes, scope & recursion tracing', 'Learn stacks & queues', 'Learn linked lists', 'Solve GATE PYQs: C programming (trace every program by hand)', 'App practice: PDS', 'Sunday weekly test + revise DL'] },
+  { title: 'Data Structures II + Linear Algebra', subjects: ['PDS', 'EM'],
+    topics: ['Binary trees, traversals, BST, AVL basics', 'Binary heaps: insert, delete, build-heap', 'Graph representations (adjacency list/matrix)', 'Linear Algebra: matrices, determinants, rank, systems of linear equations'],
+    tasks: ['Learn trees, BST & traversals', 'Learn heaps', 'Learn graph representations', 'Learn matrices, determinant, rank, linear systems', 'Solve GATE PYQs: Trees, Heaps, Linear Algebra', 'App practice: all PDS ≥ 70%', 'Sunday weekly test + revise C'] },
+  { title: 'Algorithms I', subjects: ['ALG'],
+    topics: ['Asymptotic notation, comparing growth rates', 'Recurrences: substitution, recursion tree, master theorem', 'Searching, sorting (all standard sorts + stability + complexity), hashing & collision resolution', 'Divide and conquer'],
+    tasks: ['Learn asymptotics & recurrences', 'Learn searching & sorting', 'Learn hashing', 'Learn divide & conquer', 'Solve GATE PYQs: Complexity, Sorting, Hashing', 'App practice: Algorithms', 'Sunday weekly test + revise DS'] },
+  { title: 'Algorithms II', subjects: ['ALG'],
+    topics: ['Greedy: activity selection, Huffman, fractional knapsack', 'MST: Prim, Kruskal', 'Graph traversal: BFS, DFS, topological sort, SCC basics', 'Shortest paths: Dijkstra, Bellman–Ford, Floyd–Warshall', 'Dynamic programming: LCS, 0/1 knapsack, matrix chain, subset sum'],
+    tasks: ['Learn greedy & MST', 'Learn BFS/DFS & topological sort', 'Learn shortest path algorithms', 'Learn dynamic programming', 'Solve GATE PYQs: Greedy, Graphs, DP', 'App practice: all Algorithms ≥ 70%', 'Sunday weekly test + revise Algo I'] },
+  { title: 'COA I + Linear Algebra II', subjects: ['COA', 'EM'],
+    topics: ['Machine instructions, instruction formats, addressing modes', 'ALU, data path, hardwired vs microprogrammed control', 'Instruction pipelining, speedup, hazards (structural/data/control), stalls, forwarding', 'Eigenvalues, eigenvectors, LU decomposition'],
+    tasks: ['Learn instructions & addressing modes', 'Learn ALU, datapath & control unit', 'Learn pipelining & hazards (numericals!)', 'Learn eigenvalues & LU decomposition', 'Solve GATE PYQs: Addressing modes, Pipelining, Linear Algebra', 'App practice: COA + EM', 'Sunday weekly test + revise Algo II'] },
+  { title: 'COA II', subjects: ['COA'],
+    topics: ['Memory hierarchy, cache mapping (direct/set-assoc/fully), tag bits, AMAT, write policies', 'Main memory organization, interleaving', 'Secondary storage: disk access time', 'I/O interface: programmed I/O, interrupts, DMA'],
+    tasks: ['Learn cache mapping & address breakdown', 'Learn AMAT & multi-level caches', 'Learn disk & main memory', 'Learn interrupts & DMA', 'Solve GATE PYQs: Cache, Memory, I/O', 'App practice: all COA ≥ 70%', 'Sunday weekly test + revise COA I'] },
+  { title: 'BUFFER + Revision Round 0', subjects: ['DM', 'DL', 'PDS', 'ALG', 'COA', 'EM'],
+    topics: ['Catch up on anything left from Weeks 1–9', 'Re-solve every question in your error log', 'Revise short notes of DM, DL, PDS, ALG, COA'],
+    tasks: ['Finish pending topics from Weeks 1–9', 'Re-attempt all app questions marked wrong (Practice → Mistakes)', 'Revise short notes: DM & DL', 'Revise short notes: PDS & ALG', 'Revise short notes: COA', 'Cumulative test: 40 practice questions from DM/DL/PDS/ALG/COA (timed, 90 min)'] },
+  { title: 'Operating Systems I', subjects: ['OS'],
+    topics: ['System calls, processes, fork(), threads', 'CPU scheduling: FCFS, SJF, SRTF, RR, priority (Gantt chart numericals)', 'Concurrency: critical section, Peterson, semaphores, classic problems (producer–consumer, readers–writers, dining philosophers)', 'Deadlock: conditions, Banker\'s algorithm, RAG'],
+    tasks: ['Learn processes, threads & system calls', 'Learn CPU scheduling (solve 20 Gantt numericals)', 'Learn synchronization & semaphores', 'Learn deadlocks & Banker\'s algorithm', 'Solve GATE PYQs: Scheduling, Synchronization, Deadlock', 'App practice: OS', 'Sunday weekly test + revise COA'] },
+  { title: 'Operating Systems II + Calculus', subjects: ['OS', 'EM'],
+    topics: ['Memory management: contiguous allocation, paging, segmentation, multi-level page tables, TLB', 'Virtual memory: demand paging, page replacement (FIFO/LRU/Optimal), thrashing', 'File systems, inode/indexed allocation, disk scheduling (FCFS/SSTF/SCAN/C-SCAN)', 'Calculus: limits, continuity, differentiability, maxima/minima, mean value theorem, integration'],
+    tasks: ['Learn paging, page tables & TLB', 'Learn virtual memory & page replacement', 'Learn file systems & disk scheduling', 'Learn calculus topics', 'Solve GATE PYQs: Memory Mgmt, File Systems, Calculus', 'App practice: all OS ≥ 70%', 'Sunday weekly test + revise OS I'] },
+  { title: 'Theory of Computation I', subjects: ['TOC'],
+    topics: ['Regular expressions, DFA, NFA, ε-NFA, conversions, minimization', 'Regular languages: closure properties, pumping lemma', 'Context-free grammars, derivations, ambiguity, normal forms', 'Pushdown automata, DPDA vs NPDA'],
+    tasks: ['Learn DFA/NFA & minimization', 'Learn regular expressions & closure properties', 'Learn pumping lemma', 'Learn CFG & PDA', 'Solve GATE PYQs: Regular languages, CFG', 'App practice: TOC', 'Sunday weekly test + revise OS'] },
+  { title: 'TOC II + Probability & Statistics', subjects: ['TOC', 'EM'],
+    topics: ['CFL closure properties, CFL pumping lemma, DCFL', 'Turing machines, recursive & RE languages', 'Decidability, halting problem, Rice\'s theorem, reductions', 'Probability: random variables, distributions (uniform, normal, exponential, Poisson, binomial), mean/median/mode/SD, conditional probability, Bayes'],
+    tasks: ['Learn CFL properties & DCFL', 'Learn Turing machines & decidability', 'Learn probability & distributions', 'Learn statistics & Bayes theorem', 'Solve GATE PYQs: Undecidability, Language classification, Probability', 'App practice: all TOC ≥ 70% + EM', 'Sunday weekly test + revise TOC I'] },
+  { title: 'Compiler Design', subjects: ['CD'],
+    topics: ['Lexical analysis, tokens', 'Parsing: FIRST/FOLLOW, LL(1), LR(0), SLR, CLR, LALR, conflicts', 'Syntax-directed translation, S/L-attributed definitions', 'Runtime environments, intermediate code (3-address code, quadruples)', 'Local optimization, DAG, data-flow analysis: constant propagation, liveness, CSE'],
+    tasks: ['Learn lexical analysis & FIRST/FOLLOW', 'Learn LL(1) & LR parsers (build tables by hand)', 'Learn SDT & runtime environments', 'Learn intermediate code & optimization/data-flow', 'Solve GATE PYQs: Compiler Design', 'App practice: Compiler Design ≥ 70%', 'Sunday weekly test + revise TOC'] },
+  { title: 'Databases', subjects: ['DB'],
+    topics: ['ER model, relational model, keys', 'Relational algebra, tuple calculus, SQL (joins, nested/correlated queries, GROUP BY, NULL behaviour)', 'Functional dependencies, closures, candidate keys, normal forms (1NF–BCNF), lossless & dependency-preserving decomposition', 'File organization, indexing, B and B+ trees', 'Transactions, serializability (conflict/view), recoverability, 2PL, timestamp protocols'],
+    tasks: ['Learn ER & relational model, RA & TRC', 'Learn SQL (write & trace queries)', 'Learn FDs & normalization', 'Learn indexing & B/B+ trees', 'Learn transactions & concurrency control', 'Solve GATE PYQs: DBMS', 'App practice: Databases ≥ 70%'] },
+  { title: 'Computer Networks', subjects: ['CN'],
+    topics: ['Layering: OSI & TCP/IP; packet, circuit & virtual-circuit switching', 'Data link: framing, error detection (CRC, Hamming), flow control (stop-and-wait, GBN, SR), MAC (CSMA/CD, Ethernet), bridging', 'Network layer: IPv4, subnetting, CIDR, fragmentation, NAT, ARP/DHCP/ICMP; routing (distance vector, link state)', 'Transport: UDP, TCP, flow & congestion control, sockets', 'Application: DNS, SMTP, HTTP, FTP, email'],
+    tasks: ['Learn layering, switching & data link layer', 'Learn flow control & MAC (numericals)', 'Learn IP addressing, subnetting, fragmentation', 'Learn routing & transport layer (TCP congestion)', 'Learn application layer protocols', 'Solve GATE PYQs: Computer Networks', 'App practice: Computer Networks ≥ 70%'] },
+  { title: 'Revision Round 1 + Mocks 1 & 2', subjects: ['GA', 'DM', 'EM', 'DL', 'COA', 'PDS', 'ALG', 'TOC', 'CD', 'OS', 'DB', 'CN'],
+    topics: ['Revise all short notes (2 subjects per day)', 'Full-length mocks under exam conditions (3 h, no breaks)', 'Deep analysis of every mistake'],
+    tasks: ['Revise: EM, DM, DL', 'Revise: COA, PDS, ALG', 'Revise: TOC, CD, OS', 'Revise: DB, CN, GA', 'Mock 1 (target ≥ 40) + full analysis', 'Mock 2 (target ≥ 45) + full analysis', 'Attempt 2 previous-year GATE papers (official site)'] },
+  { title: 'Revision Round 2 + Mock 3', subjects: ['GA', 'DM', 'EM', 'DL', 'COA', 'PDS', 'ALG', 'TOC', 'CD', 'OS', 'DB', 'CN'],
+    topics: ['Weak-subject focus (see Dashboard accuracy table)', 'Formula sheet & error log revision', 'More full-length papers'],
+    tasks: ['Identify 3 weakest subjects from Dashboard & re-study them', 'Mock 3 (target ≥ 50) + analysis', 'Random mock (target ≥ 55) + analysis', 'Attempt 2 more previous-year GATE papers', 'Re-attempt all Mistakes in Practice mode until 100%', 'Write a 2-page master formula sheet'] },
+  { title: 'Final Week — Exam Ready', subjects: ['GA', 'DM', 'EM', 'DL', 'COA', 'PDS', 'ALG', 'TOC', 'CD', 'OS', 'DB', 'CN'],
+    topics: ['Light revision only, no new topics', 'Sleep schedule aligned to exam slot', 'Admit card, ID, route to centre'],
+    tasks: ['1 last random mock (3 days before exam, not the day before)', 'Revise formula sheet & error log daily', 'Practise the GATE virtual calculator (official site)', 'Download admit card & check exam centre', 'Sleep 7–8 h every night'] }
+];
+
+// Target scores for mock tests (the bank is somewhat easier than the real paper, so aim high).
+window.MOCK_TARGETS = { 'Mock 1': 40, 'Mock 2': 45, 'Mock 3': 50, 'Random Mock': 55 };
